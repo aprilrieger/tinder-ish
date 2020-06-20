@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Raleway&display=swap');
+
+body{
+  background-image: url('./images/double-bubble-outline.png');
+  background-repeat: repeat;
+}
+
+.jumbotron{
+  background:linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255 , 255, 0.3)), url('#');
+  background-size: auto;
+  background-color: #ffdad7;
+}
+
 .App {
   text-align: center;
 }
@@ -7,10 +20,53 @@
   pointer-events: none;
 }
 
+.card{
+  width: 318px !important;
+  float: left;
+  margin: 18px;
+}
+
+.display-3, h1{
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+h2{
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.card-title {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 18px !important;
+}
+
+p, a, .btn, .btn-secondary{
+  font-family: 'Raleway', sans-serif !important;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+@media only screen and (max-width: 1200px) {
+  .card{
+    width: 519px !important;
+    float: left;
+    margin: 17px;
+  }
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    .card{
+      width: 300px !important;
+      float: left;
+      margin: 17px;
+    }
 }
 
 .App-header {

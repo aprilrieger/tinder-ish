@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import "./App.css"
+import cats from './cats'
+import Header from "./components/Header"
+import CatIndex from "./pages/CatIndex"
+import NewCat from "./pages/NewCat"
+import Navigation from "./components/Navigation"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+  const [allCats, setAllCats] = useState(cats);
+    return(
+      <React.Fragment>
+        <Navigation />
+        <Header />
+        <div className="container">
+        <Router>
+          <Switch>
+            {/* <Route exact path="/cat/:id" component={ CatShow } /> */}
+            <Route exact path="/" render={ (props) => <CatIndex cats={ allCats } /> } />
+            <Route path="/newcat" render={ (props) => <NewCat /> } />
+          </Switch>
+        </Router>
+        </div>
+      </React.Fragment>
+    )
 }
-
 export default App;
